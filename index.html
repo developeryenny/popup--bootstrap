@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Popup</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+  </head>
+      
+<style>
+   .modal-body {
+    height: 900px;
+  }
+   
+    </style>
+    
+  <body>
+
+            <!-- Button trigger modal -->
+     
+            <label><a href="http://exemple.es/Noticia.aspx?ID=77" data-toggle="modal" data-target="#myModal"  ><strong> Protección de datos</strong></a> </label>
+            
+            <div class="modal fade  bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content" role="document">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Aviso de protección de datos</h4>
+                    
+                  </div>
+                  <div class="modal-body" id="siteloader">
+       
+                  </div>
+           
+                </div>
+              </div>
+            </div>
+  
+        
+            
+            
+ 
+            
+<!--	</div>-->
+<!--</div>
+    -->
+    
+
+
+
+    
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    
+<script>
+    function centerModal() {
+    $(this).css('display', 'block');
+    var $dialog = $(this).find(".modal-dialog");
+ /*   var offset = ($(window).height() - $dialog.height()) / 2;
+    // Center modal vertically in window
+    $dialog.css("margin-top", offset);*/
+        $("#siteloader").html('<object  width="100%"  height= "90%" data="http://exemple.es/Noticia.aspx?ID=77">')
+ 
+}
+
+$('.modal').on('show.bs.modal', centerModal);
+$(window).on("resize", function () {
+    $('.modal:visible').each(centerModal);
+});  
+ </script>
+
+
+
+  </body>
+</html>
